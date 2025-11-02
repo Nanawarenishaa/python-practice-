@@ -1,34 +1,45 @@
 class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-class LinkedList:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+    
+class LinkList:
     def __init__(self):
-        self.head = None
+        self.head=None
 
-    def append(self, data):
-        new_node = Node(data)
+    def insertData(self,data):
+        newNode=Node(data)
         if self.head is None:
-            self.head = new_node
-            return
-        last = self.head
-        while last.next:
-            last = last.next
-        last.next = new_node
-
+            self.head=newNode
+            print(f"{data} inserted successfully!")
+        else:
+            temp=self.head
+            while temp.next:
+                temp=temp.next
+            temp.next=newNode
+            print(f"{data} inserted successfully!")
     def display(self):
-        current = self.head
-        while current:
-            print(current.data, end=" -> ")
-            current = current.next
-        print("None")
+        if self.head is Node:
+            print("list is empty!")
+        else:
+            temp=self.head
+            while temp:
+                print(temp.data,end="->")
+                temp=temp.next
+            print("None")
 
-
-# 🔹 Using Linked List
-ll = LinkedList()
-ll.append(10)
-ll.append(20)
-ll.append(30)
-
-ll.display()
+LL=LinkList()
+while True:
+    print("1.insert data \n2.display \n3.exit")
+    ch=int(input("enter your choice:"))
+    if ch==1:
+       data=int(input("enter data:"))
+       LL.insertData(data)
+    elif ch==2:
+        LL.display()
+    elif ch==3:
+        print("existing program....")
+        break
+    else:
+        print("invalid choice!please try again..")
+         
