@@ -20,7 +20,7 @@ class LinkedList:
         newNode=Node(data)
         if pos == 1:
             newNode.next=self.head
-            self.head=newnode
+            self.head=newNode
             return
         temp=self.head
         count=1
